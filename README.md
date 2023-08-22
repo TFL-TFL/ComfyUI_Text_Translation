@@ -62,20 +62,7 @@
 
   <img src="images/image7.png" width="1024"/>
 
-（2）配置密钥
-
-&ensp;1） 直接写在代码里，在 &ensp;  .node/tencent_translation.py &ensp; 文件中，在`cred = credential.Credential("secretId", "secretKey")`这里填上你的密钥（&nbsp;"secretId" &nbsp;和&nbsp; "secretKey"&nbsp;）这种有泄露密钥的风险，不推荐，但简单。
-
-  <img src="images/image8.png" width="1024"/>
-
-&ensp;2） 放在环境变量里，添加`TENCENTCLOUD_SECRET_ID`和`TENCENTCLOUD_SECRET_KEY`，稍微多些步骤，但安全。（请在启动ComfyUI前设置好，若已启动
-需要重启&nbsp;ComfyUI）
-
-  <img src="images/image9.png" width="1024"/>
-
-可在终端使用  `echo %环境变量名称%`  查看环境变量是否设置正确。
-
-(3) 安装 &nbsp; 腾讯翻译SDK &nbsp;(更多安装介绍：[腾讯翻译SDK文档](https://cloud.tencent.com/document/sdk/Python))。
+(2) 安装 &nbsp; 腾讯翻译SDK &nbsp;(更多安装介绍：[腾讯翻译SDK文档](https://cloud.tencent.com/document/sdk/Python))。
 
 请先确定你使用的&nbsp;ComfyUI&nbsp;的&nbsp;Python&nbsp;目录在哪里，在终端中切换到该目录下，输入以下命令：
 
@@ -89,7 +76,7 @@
 
 (勿将SDK添加错位置，否则无效）
 
-（4）添加该节点到&nbsp;ComfyUI
+（3）添加该节点到&nbsp;ComfyUI
 
 &ensp;1） 克隆本项目
 
@@ -104,7 +91,25 @@
 
 下载解压后放入`custom_nodes`内
 
-重启ComfyUI
+
+
+（4）配置密钥
+
+&ensp;1） 直接写在代码里，在 &ensp;  .custom_nodes/ComfyUI_Text_Translation_zh_CN/node/tencent_translation.py &ensp; 文件里，
+找到`cred = credential.Credential("secretId", "secretKey")`这里填上你的密钥（&nbsp;"secretId" &nbsp;和&nbsp; "secretKey"&nbsp;）该方式有泄露密钥的风险，不推荐，但简单。
+
+  <img src="images/image8.png" width="1024"/>
+
+&ensp;2） 放在环境变量里，添加`TENCENTCLOUD_SECRET_ID`和`TENCENTCLOUD_SECRET_KEY`，稍微多些步骤，但安全。（请在启动ComfyUI前设置好，若已启动
+需要重启&nbsp;ComfyUI）
+
+  <img src="images/image9.png" width="1024"/>
+
+可在终端使用  `echo %环境变量名称%`  查看环境变量是否设置正确。
+
+（5）重启ComfyUI
+
+  所有的步骤都操作完啦，可以愉快的创作呦！
 
 ### 3、其他
 我对比了阿里、百度、有道、腾讯这些翻译API，其中腾讯每月免费可用的量是最大的，所以选择用它。
