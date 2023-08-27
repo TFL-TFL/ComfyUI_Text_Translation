@@ -64,7 +64,7 @@ class TencentTextTranslation:
             "required": {
                 "text_trans": ("STRING", {"multiline": True}),
                 "text_normal": ("STRING", {"multiline": True}),
-                "trans_switch": (["enabled", "disabled"], {"default": "enabled"}),
+                "trans_switch": (["enabled", "disabled"], ),
             },
         }
 
