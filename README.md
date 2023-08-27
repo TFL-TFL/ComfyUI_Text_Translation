@@ -7,6 +7,10 @@
 ## 效果如下
 <img src="images/image1.png" />
 
+### 在 [StableSwarmUI](https://github.com/Stability-AI/StableSwarmUI) 中使用 ComfyUI 作为后端的效果如下：
+
+<img src="images/image11.png" />
+
 ## 说明
 - 该节点采用了[腾讯翻译API](https://cloud.tencent.com/product/tmt)进行文本翻译。
 - 可能会许多人需要使用这种类型的节点，但我目前尚未找到相关的开放资源，所以把这个分享给大家。
@@ -111,8 +115,23 @@
 
   所有的步骤都操作完啦，可以愉快的创作呦！
 
-### 3、其他
+### 4、更新日志
+2023-8-27
+
+&emsp;去除“翻译开关”的默认值，以便适配&nbsp;[StableSwarmUI](https://github.com/Stability-AI/StableSwarmUI)&nbsp;
+
+2023-8-22
+
+&emsp;初始提交，节点采用了[腾讯翻译API](https://cloud.tencent.com/product/tmt)进行文本翻译。
+
+
+### 5、其他
 我对比了阿里、百度、有道、腾讯这些翻译API，其中腾讯每月免费可用的量是最大的，所以选择用它。
 
 至于为什么没有选择免费的API，只是觉得这些API稳定性稍差，便没有考虑。
 
+
+
+
+
+  
