@@ -118,7 +118,7 @@
 ### 4、更新日志
 2023-8-27
 
-&emsp;去除“翻译开关”的默认值，以便适配&nbsp;[StableSwarmUI](https://github.com/Stability-AI/StableSwarmUI)&nbsp;
+&emsp;去除“翻译开关”的默认值，以便适配&nbsp;[StableSwarmUI](https://github.com/Stability-AI/StableSwarmUI)&nbsp;，不然该开关的值会由“可选择类型”变成“要输入类型的文字”。
 
 2023-8-22
 
