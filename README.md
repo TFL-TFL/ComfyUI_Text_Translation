@@ -1,7 +1,7 @@
 # 文本翻译
 该自定义节点扩展 适用于 [ComfyUI](https://github.com/comfyanonymous/ComfyUI)。
 
-现版本无需申请翻译API，直接使用即可。
+现版本无需申请翻译API的密钥，直接使用即可。
 
 现已添加的翻译平台：阿里巴巴（Alibaba）、必应（Bing）、谷歌（Google）。
 
