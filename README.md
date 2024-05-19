@@ -120,11 +120,11 @@ yandex -- Yandex
 yeekit -- Yeekit
 youdao -- 有道（Youdao）
 ```
- 在 &ensp;  .custom_nodes/ComfyUI_Text_Translation/nodes/text.py &ensp; 文件的如下位置修改：
+ 在 `.custom_nodes/ComfyUI_Text_Translation/nodes/text.py` 文件的如下位置修改：
   <img src="images/Text_Translation_V2_s.png" width="1024"/>
 
 #### （4）修改节点显示的语言
-在 &ensp;  .custom_nodes/ComfyUI_Text_Translation/nodes/text.py &ensp; 文件的 开头和 结尾 位置修改：
+在 `.custom_nodes/ComfyUI_Text_Translation/nodes/text.py` 文件的 开头和 结尾 位置修改：
 
 修改节点类别：
 
