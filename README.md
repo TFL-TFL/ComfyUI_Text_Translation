@@ -120,11 +120,11 @@ yandex -- Yandex
 yeekit -- Yeekit
 youdao -- 有道（Youdao）
 ```
- 直接写在代码里，在 &ensp;  .custom_nodes/ComfyUI_Text_Translation/nodes/text.py &ensp; 文件的如下位置修改：
+ 在 &ensp;  .custom_nodes/ComfyUI_Text_Translation/nodes/text.py &ensp; 文件的如下位置修改：
   <img src="images/Text_Translation_V2_s.png" width="1024"/>
 
 #### （4）修改节点显示的语言
-直接写在代码里，在 &ensp;  .custom_nodes/ComfyUI_Text_Translation/nodes/text.py &ensp; 文件的 开头和 结尾 位置修改：
+在 &ensp;  .custom_nodes/ComfyUI_Text_Translation/nodes/text.py &ensp; 文件的 开头和 结尾 位置修改：
 
 修改节点类别：
 
@@ -142,8 +142,8 @@ youdao -- 有道（Youdao）
 #### 2024-05-19
 1、弃用腾讯翻译API，简化配置，使用&nbsp;[Translators](https://github.com/UlionTse/translators)&nbsp;提供的方式进行翻译，无需申请密钥了。
 
-2、完全重写节点、新增或修改 “文本翻译”、“文本翻译 V2”、 “获取翻译平台列表”、“文本”、“文本开关”、“文本联接”节点。
-2、完全重写节点、新增或修改 “文本翻译”、“文本翻译 V2”、 “获取翻译平台列表”、“文本”、“文本开关”、“文本联接”节点。
+2、完全重写节点，新增或修改 “文本翻译”、“文本翻译 V2”、 “获取翻译平台列表”、“文本”、“文本开关”、“文本联接” 节点。
+
 
 #### 2023-08-27
 
