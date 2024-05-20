@@ -12,6 +12,7 @@ app.registerExtension({
 			break;
 
 			case 'Text_Translation_V2':	
+			case 'Text_Translation_V2_Full':	
 				text_translation_v2_widget(nodeType, nodeData, app);
 			break;
 		}

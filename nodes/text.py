@@ -1,11 +1,6 @@
 
-from ..utils.translation import  translators, get_translator
+from ..utils.translation import  translators
 
-# 适应不同地区的人使用该节点，当前默认类别名为英文，按需自行更改
-# Adapt to people from different regions using this node. 
-# The current default class alias is in English and can be changed as needed
-
-# CATEGORY_NAME = "文本翻译"
 CATEGORY_NAME = "Text Translation"
 
 class Text:
@@ -62,21 +57,15 @@ class Text_Translation_V2:
     def __init__(self):
         pass
 
-    #  截止 [Translators](https://github.com/UlionTse/translators) 版本：v5.9.1 支持如下翻译平台：
-    # alibaba, apertium, argos, baidu, bing, caiyun, cloudTranslation, deepl, elia, 
-    # google, hujiang, iciba, iflytek, iflyrec, itranslate, judic, languageWire, lingvanex,
-    # niutrans, mglip, mirai, modernMt, myMemory, papago, qqFanyi, qqTranSmart, reverso, 
-    # sogou, sysTran, tilde, translateCom, translateMe, utibet, volcEngine, yandex, yeekit, youdao
-
     @classmethod
     def INPUT_TYPES(s):
         return {
             "required": {
                 "trans_switch": ("BOOLEAN", {"default": True, "label_on": "on", "label_off": "off"}),
                 "trans_text": ("STRING",  {"multiline": True}),
-                "translator": (["alibaba", "bing", "google", ],),   #直接再此添加 翻译平台
-                "source_language": (["auto", "zh", "en", ],),     #直接再此添加 相应支持的源语言
-                "target_language": (["en", "zh", ],),      #直接再此添加 相应支持的目标语言
+                "translator": (["Bing", "Google", "Alibaba"],), 
+                "source_language": (["auto", "中文(zh)", "English(en)", "Español(es)", "عربية(ar)", "हिन्दी(hi)", "Русский(ru)", "Français(fr)", "Deutsch(de)", "Português(pt)", "한국어(ko)", "日本語(ja)"],),    
+                "target_language": (["English(en)", "中文(zh)", "Español(es)", "عربية(ar)", "हिन्दी(hi)", "Русский(ru)", "Français(fr)", "Deutsch(de)", "Português(pt)", "한국어(ko)", "日本語(ja)"],),    
             },
         }
 
@@ -92,19 +81,30 @@ class Text_Translation_V2:
     def func(self, trans_switch, trans_text, translator, source_language, target_language):
         output_text = ""
         if trans_switch:
+            translator = translator.lower()
+            if(source_language != "auto"):
+               source_language = source_language.split("(")[1].split(")")[0]
+            target_language = target_language.split("(")[1].split(")")[0]
             output_text = translators(text = trans_text, translator = translator, source_language = source_language, target_language = target_language)
         else:
             output_text = trans_text
         return (output_text,)
     
-class Get_Translator:
+class Text_Translation_V2_Full:
     def __init__(self):
         pass
 
     @classmethod
     def INPUT_TYPES(s):
         return {
-            "required": { },
+            "required": {
+                "trans_switch": ("BOOLEAN", {"default": True, "label_on": "on", "label_off": "off"}),
+                "trans_text": ("STRING",  {"multiline": True}),
+                "translator": (["Alibaba", "Apertium", "Argos", "Baidu", "Bing", "Caiyun", "CloudTranslation", "DeepL", "Elia", "Google", "Hujiang", "Iciba", "Iflytek", "Iflyrec", "Itranslate", "Judic", "LanguageWire", "Lingvanex", "Niutrans", "Mglip", "Mirai", "ModernMt", "MyMemory", "Papago", "QqFanyi", "QqTranSmart", "Reverso", "Sogou", "SysTran", "Tilde", "TranslateCom", "TranslateMe", "Utibet", "VolcEngine", "Yandex", "Yeekit", "Youdao"],),  
+                "source_language": (["auto", "中文(zh)", "English(en)", "عربية(ar)", "Русский(ru)", "Français(fr)", "Deutsch(de)", "Español(es)", "Português(pt)", "Italiano(it)", "日本語(ja)", "한국어(ko)", "Ελληνικά(el)", "Nederlands(nl)", "हिन्दी(hi)", "Türkçe(tr)", "Melayu(ms)", "ไทย(th)", "Tiếng Việt(vi)", "Indonesia(id)", "עברית(he)", "Polski(pl)", "Монгол(mn)", "Čeština(cs)", "Magyar(hu)", "Eesti(et)", "Български(bg)", "Dansk(da)", "Suomi(fi)", "Română(ro)", "Svenska(sv)", "Slovenščina(sl)", "فارسی(fa)", "Bosanski(bs)", "Српски(sr)", "Fijian(fj)", "Tagalog(tl)", "Kreyòl ayisyen(ht)", "Català(ca)", "文言文 WYW(wyw)", "粵語(yue)", "内蒙语 Монгол(mn)", "维吾尔语 Уйгурча(uy)", "藏语 ትግርኛ(ti)", "白苗文 Hmoob(mww)", "彝语(ii)", "苗语 Hmong(hmn)", "壮语(zyb)"],),    
+                "target_language": (["English(en)", "中文(zh)", "عربية(ar)", "Русский(ru)", "Français(fr)", "Deutsch(de)", "Español(es)", "Português(pt)", "Italiano(it)", "日本語(ja)", "한국어(ko)", "Ελληνικά(el)", "Nederlands(nl)", "हिन्दी(hi)", "Türkçe(tr)", "Melayu(ms)", "ไทย(th)", "Tiếng Việt(vi)", "Indonesia(id)", "עברית(he)", "Polski(pl)", "Монгол(mn)", "Čeština(cs)", "Magyar(hu)", "Eesti(et)", "Български(bg)", "Dansk(da)", "Suomi(fi)", "Română(ro)", "Svenska(sv)", "Slovenščina(sl)", "فارسی(fa)", "Bosanski(bs)", "Српски(sr)", "Fijian(fj)", "Tagalog(tl)", "Kreyòl ayisyen(ht)", "Català(ca)", "文言文 WYW(wyw)", "粵語(yue)", "内蒙语 Монгол(mn)", "维吾尔语 Уйгурча(uy)", "藏语 ትግርኛ(ti)", "白苗文 Hmoob(mww)", "彝语(ii)", "苗语 Hmong(hmn)", "壮语(zyb)"]
+,),      
+            },
         }
 
     RETURN_TYPES = ("STRING",)
@@ -116,9 +116,41 @@ class Get_Translator:
 
     CATEGORY = CATEGORY_NAME
 
-    def func(self):
-        translator = get_translator()
-        return (translator,)
+    def func(self, trans_switch, trans_text, translator, source_language, target_language):
+        output_text = ""
+        if trans_switch:
+            translator = translator.lower()
+            if(source_language != "auto"):
+               source_language = source_language.split("(")[1].split(")")[0]
+            target_language = target_language.split("(")[1].split(")")[0]
+            output_text = translators(text = trans_text, translator = translator, source_language = source_language, target_language = target_language)
+        else:
+            output_text = trans_text
+        return (output_text,)
+    
+    
+# class Get_Translator:
+#     def __init__(self):
+#         pass
+
+#     @classmethod
+#     def INPUT_TYPES(s):
+#         return {
+#             "required": { },
+#         }
+
+#     RETURN_TYPES = ("STRING",)
+#     RETURN_NAMES = ("string",)
+
+#     FUNCTION = "func"
+
+#     #OUTPUT_NODE = False
+
+#     CATEGORY = CATEGORY_NAME
+
+#     def func(self):
+#         translator = get_translator()
+#         return (translator,)
 
 class Text_Switch:
     def __init__(self):
@@ -170,32 +202,20 @@ NODE_CLASS_MAPPINGS = {
     "Text": Text,
     "Text_Translation": Text_Translation,
     "Text_Translation_V2": Text_Translation_V2,
+    "Text_Translation_V2_Full": Text_Translation_V2_Full,
     "Text_Switch": Text_Switch,
     "Text_Concatenate": Text_Concatenate,
-    "Get_Translator": Get_Translator,
+    # "Get_Translator": Get_Translator,
 }
-
-
-# 适应不同地区的人使用该节点，当前默认节点名为英文，按需自行更改
-# Adapt to people from different regions using this node. 
-# The current default node name is English and can be changed as needed
-
-# NODE_DISPLAY_NAME_MAPPINGS = {
-#     "Text": "文本",
-#     "Text_Translation": "文本翻译",
-#     "Text_Translation_V2": "文本翻译V2",
-#     "Text_Switch": "文本开关",
-#     "Text_Concatenate": "文本联接",
-#     "Get_Translator": "获取翻译平台",
-# }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "Text": "Text",
     "Text_Translation": "Text Translation",
     "Text_Translation_V2": "Text Translation V2",
+    "Text_Translation_V2_Full": "Text Translation V2 (Full)",
     "Text_Switch": "Text Switch",
     "Text_Concatenate": "Text Concatenate",
-    "Get_Translator": "Get Translator",
+    # "Get_Translator": "Get Translator",
 }
 
 
