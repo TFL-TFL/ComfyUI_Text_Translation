@@ -3,7 +3,7 @@
 
 现版本无需申请翻译API的密钥，直接使用即可。
 
-该节点调用 [Translators](https://github.com/UlionTse/translators) 进行翻译。
+#### 该节点调用 [Translators](https://github.com/UlionTse/translators) 库进行翻译，在此由心的感谢该库的作者，为我们提供免费、多样性的翻译途径。
 
 ## 注意：
 1、更新前 需要将2024年05月19日前使用的老项目删除，当前项目与老项目完全不兼容。
