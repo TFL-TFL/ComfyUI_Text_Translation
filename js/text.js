@@ -1,5 +1,5 @@
 import {app } from "../../scripts/app.js";
-import { log, dynamic_connection, findWidgetByName, toggleWidget } from './ulits.js'
+import { log, dynamic_connection, findWidgetByName, toggleWidget } from './utils.js'
 
 app.registerExtension({
 	name: "TextTranslation.text",
