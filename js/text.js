@@ -25,7 +25,7 @@ function text_concatenate_widget(nodeType, nodeData, app) {
 	const onNodeCreated = nodeType.prototype.onNodeCreated;
 	nodeType.prototype.onNodeCreated = function () {
 		const onc = onNodeCreated?.apply(this, arguments);
-		this.addInput(`${input_name}`, "STRING");
+		this.addInput(`${input_name}1`, "STRING");
 		return onc;
 	};
 
