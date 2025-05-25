@@ -177,6 +177,11 @@ Català (ca)
 ```
 
 ### 4、更新日志
+
+#### 2025-05-25
+1、修复当前版本的comfy中，Text Concatenate节点的连接在刷新和复制粘贴时的异常问题。
+感谢由 MakkiShizu 提出的修复方案。
+
 #### 2024-05-20
 1、文本翻译 V2：新增一些语言。
 
@@ -205,8 +210,7 @@ Prompt outputs failed validation
 Text_Translation_V2:
 - Value not in list: translator: 'alibaba' not in ['Bing', 'Google', 'Alibaba']
 ```
-### 6、其他
-作为一个新手小白，代码中可能会存在BUG，欢迎指正，我会尽量修复。
+
 
 
   
