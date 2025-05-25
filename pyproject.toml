@@ -1,0 +1,15 @@
+[project]
+name = "text_translation"
+description = "Text translation node for ComfyUI: No need to apply for a translation API key, just use it. Currently supports more than thirty translation platforms."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["translators"]
+
+[project.urls]
+Repository = "https://github.com/TFL-TFL/ComfyUI_Text_Translation"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_Text_Translation"
+Icon = ""
